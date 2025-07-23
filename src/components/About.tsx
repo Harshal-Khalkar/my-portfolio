@@ -1,12 +1,11 @@
-import React from 'react';
-
+import bgImage from '../assets/Abtt.jpg';
 const About = () => (
   <section
     id="about"
     style={{
       textAlign: 'center',
       padding: '3rem 1rem',
-      backgroundImage: `url('/Abtt.jpg')`, // Background image path (put this in public folder)
+      backgroundImage: `url(${bgImage})`, 
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       color: '#fff',

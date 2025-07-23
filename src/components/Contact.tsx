@@ -1,27 +1,26 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
+import bgImage from '../assets/contact.jpg';
 
 const Contact = () => {
-  const formRef = useRef(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [status, setStatus] = useState('');
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!formRef.current) return;
+
     emailjs
       .sendForm(
         'service_7f22zsi',       // Replace with your Service ID
         'template_guab41k',      // Replace with your Template ID
-        formRef.current!,
-        'snXMH96W5j8d_wDrf'        // Replace with your Public Key
+        formRef.current,
+        'snXMH96W5j8d_wDrf'      // Replace with your Public Key
       )
       .then(
-        () => {
-          setStatus('Message sent successfully!');
-        },
-        (error) => {
-          setStatus('Failed to send message. Try again later.');
-        }
+        () => setStatus('Message sent successfully!'),
+        () => setStatus('Failed to send message. Try again later.')
       );
   };
 
@@ -31,7 +30,7 @@ const Contact = () => {
       style={{
         padding: '3rem 1rem',
         textAlign: 'center',
-        backgroundImage: `url('/contact.jpg')`,
+        backgroundImage: `url('${bgImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: '#fff',
@@ -87,15 +86,14 @@ const Contact = () => {
   );
 };
 
-// Style objects
-const inputStyle = {
+const inputStyle: React.CSSProperties = {
   padding: '0.75rem',
   borderRadius: '6px',
   border: '1px solid #ccc',
   fontSize: '1rem',
 };
 
-const buttonStyle = {
+const buttonStyle: React.CSSProperties = {
   padding: '0.75rem',
   backgroundColor: '#00ffe0',
   color: '#000',

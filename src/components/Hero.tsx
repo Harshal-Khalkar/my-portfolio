@@ -1,5 +1,5 @@
-import React from 'react';
-import profile from '../assets/profile.jpg'; // Make sure this image exists in src/assets
+import profile from '../assets/profile.jpg'; 
+import bgImage from '../assets/home.jpg';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Hero = () => (
@@ -8,7 +8,7 @@ const Hero = () => (
     style={{
       textAlign: 'center',
       padding: '3rem 1rem',
-      backgroundImage: `url('/home.jpg')`, // Background image path (put this in public folder)
+      backgroundImage: `url('${bgImage}')`, 
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       color: '#fff',
@@ -38,7 +38,7 @@ const Hero = () => (
 
     <div style={{ margin: '0.2rem 0' }}>
       <a
-        href="/Harshal_Resume's.pdf"
+        href="/my-portfolio/Harshal_Resume's.pdf"
         download
         style={{
           padding: '0.6rem 1.2rem',

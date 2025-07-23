@@ -1,12 +1,11 @@
-import React from 'react';
-
+import bgImage from '../assets/prj.jpg';
 const Projects = () => (
   <section
     id="projects"
     style={{
       textAlign: 'center',
       padding: '3rem 1rem',
-      backgroundImage: `url('/prj.jpg')`, // Put this image in the public folder
+      backgroundImage: `url(${bgImage})`, 
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       color: '#fff',

@@ -1,6 +1,10 @@
 pipeline {
 
-    agent any
+    agent {
+        docker {
+            image 'node:22-alpine'
+        }
+    }
 
     stages {
 
@@ -11,13 +15,11 @@ pipeline {
             }
         }
 
-
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
         }
-
 
         stage('Build React App') {
             steps {
@@ -26,5 +28,4 @@ pipeline {
         }
 
     }
-
 }

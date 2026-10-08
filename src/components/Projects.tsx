@@ -23,7 +23,7 @@ const Projects = () => (
       </h2>
 
       <div style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
-        <h3 style={{ color: '#00ffe0' }}>BullForce Trading App <span style={{ fontWeight: 'normal', fontSize: '0.9rem' }}></span></h3>
+        <h3 style={{ color: '#00ffe0' }}>Trading App <span style={{ fontWeight: 'normal', fontSize: '0.9rem' }}></span></h3>
         <ul>
           <li>Developed a user login page by integrating APIs for authentication and session management.</li>
           <li>Created a document submission pop-up displayed after login for streamlined uploads.</li>
